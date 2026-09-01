@@ -1,22 +1,26 @@
 /* ============================================================
    STOLBASZ — premium, architektoniczny B2B fit-out
-   Jasna paleta, zero brązu. System wg premium-web-craft.
+   Jasna paleta, chłodny brąz + ultra delikatne złoto. System wg premium-web-craft.
    Projekt strony: Impulseo (impulseo.pl)
    ============================================================ */
 
 :root{
-  /* PALETA - chlodna, warsztatowa: kamien + stal, drewno zostaje na zdjeciach */
-  --paper:#F5F6F6;          /* glowne tlo - chlodna biel kamienia */
-  --paper-2:#E9ECEC;        /* sekcje alternatywne (chlodny jasny szary) */
-  --paper-3:#DFE3E4;        /* delikatne wypelnienia */
-  --ink:#1D2225;            /* tekst glowny - chlodny grafit */
-  --ink-soft:#3C4448;       /* naglowki drugorzedne */
-  --muted:#63696E;          /* tekst poboczny */
-  --line:rgba(29,34,37,.12);/* hairline */
-  --accent:#3F5B66;         /* stonowany petrol-slate - jedyny akcent */
-  --accent-d:#2C444D;
-  --accent-soft:rgba(63,91,102,.10);
-  --dark:#1D2225;           /* sekcje ciemne (stopka/CTA) */
+  /* PALETA - chlodny braz (przydymiony orzech), zloto TYLKO na wloskowate detale */
+  --paper:#F6F4F2;          /* glowne tlo - biel z ledwie wyczuwalnym cieplem */
+  --paper-2:#ECE8E4;        /* sekcje alternatywne */
+  --paper-3:#E1DCD7;        /* delikatne wypelnienia */
+  --ink:#221E1C;            /* tekst glowny - grafit z brazowym podkladem */
+  --ink-soft:#3E3733;       /* naglowki drugorzedne */
+  --muted:#655D58;          /* tekst poboczny */
+  --line:rgba(34,30,28,.12);/* hairline */
+  --accent:#584B44;         /* chlodny, wyszarzony braz - jedyny akcent */
+  --accent-d:#3C322D;
+  --accent-soft:rgba(88,75,68,.10);
+  --dark:#221E1C;           /* sekcje ciemne (stopka/CTA) */
+  /* ZLOTO - wylacznie 1px kreski i obramowania, NIGDY tlo ani litera.
+     Dwa warianty, bo na jasnym papierze jasne zloto znika, a na ciemnym tle ciemne brudzi. */
+  --gold:#A9873F;           /* na jasnym tle (kontrast 3.1 - widac kreske, nie krzyczy) */
+  --gold-lt:#C8AD74;        /* na ciemnym tle (stopka, zdjecie w hero) */
 
   /* HOVER ZDJĘĆ — JEDEN standard dla całego silnika (decyzja K. 04.08.2026, artefakt z wariantami).
      AKTUALNE (K.+Szymon 09.08.2026, wybór z artefaktu 6 wariantów): zoom 1.05 przy 1.4s -
@@ -49,9 +53,9 @@
   --ease:cubic-bezier(.25,.46,.45,.94); --dur:.24s;
 
   /* CIENIE — miękkie, warstwowe */
-  --sh-sm:0 1px 2px rgba(16,24,32,.04), 0 2px 8px rgba(16,24,32,.05);
-  --sh-md:0 2px 6px rgba(16,24,32,.05), 0 12px 28px -8px rgba(16,24,32,.12);
-  --sh-lg:0 6px 14px rgba(16,24,32,.07), 0 26px 56px -18px rgba(16,24,32,.22);
+  --sh-sm:0 1px 2px rgba(28,22,18,.04), 0 2px 8px rgba(28,22,18,.05);
+  --sh-md:0 2px 6px rgba(28,22,18,.05), 0 12px 28px -8px rgba(28,22,18,.12);
+  --sh-lg:0 6px 14px rgba(28,22,18,.07), 0 26px 56px -18px rgba(28,22,18,.22);
 
   --hairline:1px solid var(--line);
 
@@ -122,7 +126,9 @@ p,li,blockquote,dd{text-wrap:pretty}
    „…WNĘTRZ · LESZNO · OD 2019") druga linia lądowała z brzydkim wcięciem. */
 .eyebrow{align-items:flex-start}
 .eyebrow>*,.eyebrow{text-wrap:balance}   /* dlugi kicker lamal sie na sierote typu samo „2019" w drugiej linii */
-.eyebrow::before{content:"";width:28px;height:1px;background:var(--accent);display:inline-block;flex:none;margin-top:.62em}
+/* Zlota kreska przy kickerze - jedyny zloty akcent na jasnych sekcjach.
+   28x1 px, cztery sztuki na stronie: ma blyszczec w kadrze, nie rzadzic nim. */
+.eyebrow::before{content:"";width:28px;height:1px;background:var(--gold);display:inline-block;flex:none;margin-top:.62em}
 
 .muted{color:var(--muted)}
 .lead{font-size:var(--text-lg);line-height:1.55;color:var(--ink-soft);max-width:50ch}
@@ -202,9 +208,9 @@ p,li,blockquote,dd{text-wrap:pretty}
 .hero-actions{display:flex;flex-wrap:wrap;gap:var(--space-4)}
 .hero-art{position:relative;aspect-ratio:4/3;border-radius:var(--r-lg);overflow:hidden;box-shadow:var(--sh-lg)}
 .hero-art img{width:100%;height:100%;object-fit:cover}
-.hero-art::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,transparent 55%,rgba(18,24,28,.28))}
+.hero-art::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,transparent 55%,rgba(26,21,18,.28))}
 .hero-badge{position:absolute;left:var(--space-5);bottom:var(--space-5);z-index:2;
-  background:rgba(250,251,251,.94);backdrop-filter:blur(4px);
+  background:rgba(250,249,247,.94);backdrop-filter:blur(4px);
   border-radius:var(--r-md);padding:var(--space-4) var(--space-5);box-shadow:var(--sh-md);max-width:78%}
 .hero-badge strong{display:block;font-family:var(--font-display);font-size:1rem;letter-spacing:-.01em}
 .hero-badge span{font-size:var(--text-sm);color:var(--muted)}
@@ -213,11 +219,11 @@ p,li,blockquote,dd{text-wrap:pretty}
 .hero-cine{position:relative;min-height:clamp(560px,82vh,840px);min-height:clamp(560px,82svh,840px);display:flex;align-items:center;overflow:hidden;border-bottom:var(--hairline)}
 .hero-cine>img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:0}
 .hero-cine::after{content:"";position:absolute;inset:0;z-index:1;
-  background:linear-gradient(95deg,rgba(13,18,23,.86) 0%,rgba(13,18,23,.64) 32%,rgba(13,18,23,.24) 62%,rgba(13,18,23,.04) 100%)}
+  background:linear-gradient(95deg,rgba(22,18,15,.86) 0%,rgba(22,18,15,.64) 32%,rgba(22,18,15,.24) 62%,rgba(22,18,15,.04) 100%)}
 .hero-cine .wrap{position:relative;z-index:2;padding-block:var(--space-8)}
 .hero-cine .hero-copy{max-width:660px}
 .hero-cine .eyebrow{color:#fff;margin-bottom:var(--space-5)}
-.hero-cine .eyebrow::before{background:#fff}
+.hero-cine .eyebrow::before{background:var(--gold-lt)}
 .hero-cine h1{color:#fff;margin-bottom:var(--space-5);font-size:clamp(2.9rem,2rem + 4.4vw,5.2rem);text-wrap:balance}
 .hero-cine .lead{color:rgba(255,255,255,.92);max-width:48ch;margin-bottom:var(--space-7)}
 .hero-cine .hero-actions{display:flex;flex-wrap:wrap;gap:var(--space-4)}
@@ -233,7 +239,7 @@ p,li,blockquote,dd{text-wrap:pretty}
 }
 @media(max-width:680px){
   .hero-cine{min-height:clamp(520px,76vh,640px);min-height:clamp(520px,76svh,640px);align-items:flex-end}
-  .hero-cine::after{background:linear-gradient(0deg,rgba(13,18,23,.9) 6%,rgba(13,18,23,.45) 55%,rgba(13,18,23,.25) 100%)}
+  .hero-cine::after{background:linear-gradient(0deg,rgba(22,18,15,.9) 6%,rgba(22,18,15,.45) 55%,rgba(22,18,15,.25) 100%)}
   .hero-cine .wrap{padding-bottom:var(--space-9)}
   /* TELEFON (~90% oglądających): lead potrafił zająć 8 linii i zepchnąć CTA poza pierwszy ekran.
      Zwężamy interlinię i skalę - treści nie ucinamy, bo to ona sprzedaje. */
@@ -250,11 +256,11 @@ p,li,blockquote,dd{text-wrap:pretty}
    nagłówkach podstron 3,38-3,43:1 przy wymaganych 4,5 — jasne zdjęcie (hala, śnieg, niebo)
    podchodziło pod biały tekst. Zdjęcia klientów są różne, więc kontrast musi dawać WARSTWA,
    a nie szczęśliwy dobór kadru. */
-.pagehead::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(18,24,28,.40),rgba(18,24,28,.76))}
+.pagehead::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(26,21,18,.40),rgba(26,21,18,.76))}
 .pagehead .wrap{position:relative;z-index:2;padding-block:var(--space-9);color:#fff}
 .pagehead h1{color:#fff;max-width:18ch;text-shadow:0 2px 16px rgba(0,0,0,.55)}
 .pagehead .eyebrow{color:#fff}
-.pagehead .eyebrow::before{background:#fff}
+.pagehead .eyebrow::before{background:var(--gold-lt)}
 .pagehead p{color:rgba(255,255,255,.92);margin-top:var(--space-4);max-width:54ch;text-shadow:0 1px 12px rgba(0,0,0,.5)}
 
 /* ---------- STRIP (pasek skrótów / liczby) ---------- */
@@ -345,7 +351,7 @@ p,li,blockquote,dd{text-wrap:pretty}
 .tile .cap{position:absolute;left:0;right:0;bottom:0;padding:var(--space-5) var(--space-4) var(--space-4);
   /* mocniejszy spad + cien pod tekstem: na JASNYCH zdjeciach klienta (biale fronty, sciany)
      slaby gradient dawal kontrast ~1.5:1 zamiast wymaganych 3.6:1 (bramka wygladu, 10.08.2026) */
-  background:linear-gradient(transparent 10%,rgba(18,24,28,.55) 40%,rgba(18,24,28,.88) 68%,rgba(18,24,28,.99));color:#fff;
+  background:linear-gradient(transparent 10%,rgba(26,21,18,.55) 40%,rgba(26,21,18,.88) 68%,rgba(26,21,18,.99));color:#fff;
   text-shadow:0 1px 2px rgba(0,0,0,.85),0 2px 10px rgba(0,0,0,.55);
   font-size:var(--text-sm);font-weight:600;letter-spacing:.01em;
   opacity:0;transform:translateY(8px);transition:var(--dur) var(--ease)}
@@ -405,7 +411,7 @@ footer{background:var(--dark);color:#fff;padding-block:var(--space-9) var(--spac
 .foot-col h4{font-size:.74rem;letter-spacing:.16em;text-transform:uppercase;color:rgba(255,255,255,.5);margin-bottom:var(--space-4)}
 .foot-col a,.foot-col p{display:block;color:rgba(255,255,255,.82);font-size:var(--text-base);margin-bottom:var(--space-3)}
 .foot-col a:hover{color:#fff}
-.foot-bot{border-top:1px solid rgba(255,255,255,.12);padding-top:var(--space-5);display:flex;justify-content:space-between;flex-wrap:wrap;gap:var(--space-3);
+.foot-bot{border-top:1px solid rgba(200,173,116,.24);padding-top:var(--space-5);display:flex;justify-content:space-between;flex-wrap:wrap;gap:var(--space-3);
   font-size:var(--text-sm);color:rgba(255,255,255,.55)}
 .foot-bot a:hover{color:#fff}
 /* Podpis w stopce = klikalny link do impulseo.pl (31.07.2026). Ma być WIDOCZNIE klikalny,
@@ -515,7 +521,7 @@ section{padding-block:clamp(64px,8vw,128px)}
 .gateway{position:relative;aspect-ratio:3/4;overflow:hidden;border-radius:var(--r-sm);display:block}
 .gateway img{width:100%;height:100%;object-fit:cover;
   transition:transform var(--img-dur) var(--img-ease),filter var(--img-dur) var(--img-ease)}
-.gateway::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,transparent 38%,rgba(18,24,28,.74))}
+.gateway::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,transparent 38%,rgba(26,21,18,.74))}
 /* ===== HOVER ZDJĘĆ — jedno miejsce dla WSZYSTKICH kafli ze zdjęciem (K. 04.08.2026) ===== */
 @media(hover:hover){
   .tile img,.gateway img,.m-tile img{filter:var(--img-rest)}
@@ -583,7 +589,7 @@ section{padding-block:clamp(64px,8vw,128px)}
 /* --- licznik ważności DEMA (pomysł K. 09.08) - tylko wersje pokazowe --- */
 .demo-wazne{position:fixed;top:calc(var(--nav-h, 64px) + 14px);right:14px;z-index:95;
   display:inline-flex;align-items:center;gap:.45em;
-  background:rgba(21,25,28,.82);color:#fff;font-size:.72rem;font-weight:600;letter-spacing:.01em;
+  background:rgba(28,23,20,.82);color:#fff;font-size:.72rem;font-weight:600;letter-spacing:.01em;
   padding:.42em .8em .42em .62em;border-radius:999px;backdrop-filter:saturate(140%) blur(8px);
   border:1px solid rgba(255,255,255,.14);box-shadow:0 10px 24px -14px rgba(0,0,0,.6);
   pointer-events:none;
@@ -1007,7 +1013,7 @@ section{padding-block:clamp(var(--space-8),7vw,var(--space-10))}
   transition:border-color .2s ease,transform .2s ease,background .2s ease;
 }
 .foot-soc .soc svg{width:1.05rem;height:1.05rem;display:block}
-.foot-soc .soc:hover{border-color:var(--accent);background:rgba(255,255,255,.06);transform:translateY(-1px)}
+.foot-soc .soc:hover{border-color:var(--gold-lt);background:rgba(255,255,255,.06);transform:translateY(-1px)}
 .foot-soc .soc:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
 
 /* ---------------- 5) POWRÓT NA GÓRĘ ---------------- */
@@ -1657,11 +1663,13 @@ footer{view-transition-name:mt-foot}
 }
 
 
-/* === paleta marki - chlodna (prosba Agaty 01.09.2026); ciepla auto-paleta z logo zastapiona === */
-:root{--accent:#3F5B66;--accent-d:#2C444D;--accent-soft:rgba(63,91,102,0.10);--paper:#F5F6F6;--paper-2:#E9ECEC;--paper-3:#DFE3E4;--ink:#1D2225;--ink-soft:#3C4448;--muted:#63696E;--line:rgba(29,34,37,.12);}
+/* === paleta marki - CHLODNY BRAZ + wloskowate zloto (prosba Agaty 01.09.2026;
+       zastepuje chlodny petrol-slate z tego samego dnia i ciepla auto-palete z logo).
+       To jest blok WYGRYWAJACY - bazowy :root na gorze pliku trzymany zgodnie. === */
+:root{--accent:#584B44;--accent-d:#3C322D;--accent-soft:rgba(88,75,68,0.10);--paper:#F6F4F2;--paper-2:#ECE8E4;--paper-3:#E1DCD7;--ink:#221E1C;--ink-soft:#3E3733;--muted:#655D58;--line:rgba(34,30,28,.12);--dark:#221E1C;--gold:#A9873F;--gold-lt:#C8AD74;}
 .btn-accent{color:#fff}
 .nav .nav-links a.btn-accent{color:#fff}
 .btn-accent[data-accent-d],.cta-d .btn-accent{color:#fff}
 
 /* === szary tekst dociągnięty do czytelności (WCAG 4.5 na wszystkich tłach) === */
-:root{--muted:#63696E;}
+:root{--muted:#655D58;}

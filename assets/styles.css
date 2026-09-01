@@ -5,18 +5,18 @@
    ============================================================ */
 
 :root{
-  /* PALETA — jasna, architektoniczna, chłodna */
-  --paper:#F3F1EC;          /* główne tło */
-  --paper-2:#E6E3DB;        /* sekcje alternatywne (chłodny jasny szary) */
-  --paper-3:#E6E3DB;        /* delikatne wypełnienia */
-  --ink:#23211E;            /* tekst główny — chłodny grafit */
-  --ink-soft:#43403A;       /* nagłówki drugorzędne */
-  --muted:#87837A;          /* tekst poboczny */
-  --line:rgba(35,33,30,.12);/* hairline */
-  --accent:#8A6B3C;         /* stonowany petrol-slate — jedyny akcent */
-  --accent-d:#6E5430;
-  --accent-soft:rgba(138,107,60,.10);
-  --dark:#23211E;           /* sekcje ciemne (stopka/CTA) */
+  /* PALETA - chlodna, warsztatowa: kamien + stal, drewno zostaje na zdjeciach */
+  --paper:#F5F6F6;          /* glowne tlo - chlodna biel kamienia */
+  --paper-2:#E9ECEC;        /* sekcje alternatywne (chlodny jasny szary) */
+  --paper-3:#DFE3E4;        /* delikatne wypelnienia */
+  --ink:#1D2225;            /* tekst glowny - chlodny grafit */
+  --ink-soft:#3C4448;       /* naglowki drugorzedne */
+  --muted:#63696E;          /* tekst poboczny */
+  --line:rgba(29,34,37,.12);/* hairline */
+  --accent:#3F5B66;         /* stonowany petrol-slate - jedyny akcent */
+  --accent-d:#2C444D;
+  --accent-soft:rgba(63,91,102,.10);
+  --dark:#1D2225;           /* sekcje ciemne (stopka/CTA) */
 
   /* HOVER ZDJĘĆ — JEDEN standard dla całego silnika (decyzja K. 04.08.2026, artefakt z wariantami).
      AKTUALNE (K.+Szymon 09.08.2026, wybór z artefaktu 6 wariantów): zoom 1.05 przy 1.4s -
@@ -204,7 +204,7 @@ p,li,blockquote,dd{text-wrap:pretty}
 .hero-art img{width:100%;height:100%;object-fit:cover}
 .hero-art::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,transparent 55%,rgba(18,24,28,.28))}
 .hero-badge{position:absolute;left:var(--space-5);bottom:var(--space-5);z-index:2;
-  background:rgba(252,252,251,.94);backdrop-filter:blur(4px);
+  background:rgba(250,251,251,.94);backdrop-filter:blur(4px);
   border-radius:var(--r-md);padding:var(--space-4) var(--space-5);box-shadow:var(--sh-md);max-width:78%}
 .hero-badge strong{display:block;font-family:var(--font-display);font-size:1rem;letter-spacing:-.01em}
 .hero-badge span{font-size:var(--text-sm);color:var(--muted)}
@@ -1657,11 +1657,11 @@ footer{view-transition-name:mt-foot}
 }
 
 
-/* === auto-paleta z marki klienta (źródło: logo) === */
-:root{--accent:#98634F;--accent-d:#824F3B;--accent-soft:rgba(152,99,79,0.10);--paper:#FCF9F8;--paper-2:#F3EFED;--paper-3:#EAE5E3;--ink:#251F1D;--ink-soft:#4D4643;--muted:#807A78;--line:rgba(37,31,29,.12);}
+/* === paleta marki - chlodna (prosba Agaty 01.09.2026); ciepla auto-paleta z logo zastapiona === */
+:root{--accent:#3F5B66;--accent-d:#2C444D;--accent-soft:rgba(63,91,102,0.10);--paper:#F5F6F6;--paper-2:#E9ECEC;--paper-3:#DFE3E4;--ink:#1D2225;--ink-soft:#3C4448;--muted:#63696E;--line:rgba(29,34,37,.12);}
 .btn-accent{color:#fff}
 .nav .nav-links a.btn-accent{color:#fff}
 .btn-accent[data-accent-d],.cta-d .btn-accent{color:#fff}
 
 /* === szary tekst dociągnięty do czytelności (WCAG 4.5 na wszystkich tłach) === */
-:root{--muted:#6A6664;}
+:root{--muted:#63696E;}

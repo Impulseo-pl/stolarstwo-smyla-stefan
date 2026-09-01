@@ -54,11 +54,23 @@
 })();
 
 // nav kondensuje się po przewinięciu (cienka linia + niższy pasek) — addytywne, lekkie
+// + PASEK CHOWA SIĘ PO ZJECHANIU W DÓŁ (prośba Agaty 01.09.2026): wita na wejściu,
+//   niżej znika i oddaje cały ekran zdjęciom, wraca po powrocie na samą górę.
 (function () {
   var nav = document.querySelector('.nav') || document.querySelector('header');
   if (!nav) return;
+  var menu = document.querySelector('.nav-links');
   var ticking = false;
-  function upd() { nav.classList.toggle('is-stuck', window.scrollY > 24); ticking = false; }
+  function upd() {
+    var y = window.scrollY || window.pageYOffset || 0;
+    nav.classList.toggle('is-stuck', y > 24);
+    // Histereza 40/90 px, żeby pasek nie migał przy drobnym ruchu kołem.
+    // Wyjątek: otwarte menu mobilne wisi w pasku, więc wtedy pasek zostaje.
+    if (menu && menu.classList.contains('open')) nav.classList.remove('is-away');
+    else if (y > 90) nav.classList.add('is-away');
+    else if (y < 40) nav.classList.remove('is-away');
+    ticking = false;
+  }
   window.addEventListener('scroll', function () {
     if (!ticking) { ticking = true; requestAnimationFrame(upd); }
   }, { passive: true });

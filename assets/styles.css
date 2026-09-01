@@ -1673,3 +1673,16 @@ footer{view-transition-name:mt-foot}
 
 /* === szary tekst dociągnięty do czytelności (WCAG 4.5 na wszystkich tłach) === */
 :root{--muted:#655D58;}
+
+/* === PASEK GORNY CHOWA SIE PO ZJECHANIU W DOL (prosba Agaty 01.09.2026:
+       „widoczny tylko jak klient wchodzi na strone, a jak zjezdza nizej - znika").
+       Pasek wita na wejsciu, potem plynnie wyjezdza do gory i oddaje caly ekran
+       zdjeciom; wraca po powrocie na sam gore (albo przyciskiem „na gore").
+       Blok CELOWO na koncu pliku - dopisuje `transform` do przejscia z linii 507,
+       ktore inaczej nadpisaloby animacje chowania. === */
+.nav{transition:box-shadow .4s ease,background .4s ease,transform .45s var(--ease),opacity .3s ease}
+.nav.is-away{transform:translateY(-100%);opacity:0;pointer-events:none}
+@media (prefers-reduced-motion:reduce){
+  .nav{transition:none}
+  .nav.is-away{opacity:0;transform:translateY(-100%)}
+}
